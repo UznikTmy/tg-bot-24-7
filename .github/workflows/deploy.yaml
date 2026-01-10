@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-bot:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -16,4 +16,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run bot
-        run python app.py
+        run: python app.py
