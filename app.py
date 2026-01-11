@@ -1,5 +1,5 @@
 import telebot
-from datetime import date
+import datetime
 
 bot = telebot.TeleBot("8287514660:AAGmIWrcoydKFDWl65tb_zRrkpsFKiMEFjw")
 
