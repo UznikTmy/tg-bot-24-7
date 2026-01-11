@@ -8,7 +8,7 @@ bot = telebot.TeleBot("8287514660:AAGmIWrcoydKFDWl65tb_zRrkpsFKiMEFjw")
 def reply(message):
   now = datetime.datetime.now()
   date_time = now.strftime("%Y-%m-%d %H:%M:%S")
-  bot.reply_to(message, "Привет! Я доступен. \n Сейчас "+date_time)
+  bot.reply_to(message, "Привет! Я доступен. "+date_time)
 
 def delayed():
   th_name = threading.current_thread().name
