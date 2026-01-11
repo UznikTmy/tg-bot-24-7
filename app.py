@@ -11,11 +11,13 @@ def reply(message):
   bot.reply_to(message, "Привет! Я доступен. Сейчас "+date_time)
 
 def delayed():
-    th_name = threading.current_thread().name
-    print(f'Th:{th_name} Worker запущен')
+  th_name = threading.current_thread().name
+  print(f'Th:{th_name} Worker запущен')
+  bot.reply_to(message, "Привет! Я доступен by timer. ")
 
 # Создание и запуск потоков таймеров
-t1 = threading.Timer(0.3, delayed)
+t1 = threading.Timer(1, delayed)
 t1.start()
+# t1.cancel()
 
 bot.polling(none_stop=True)
