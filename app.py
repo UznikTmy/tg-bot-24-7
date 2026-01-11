@@ -1,6 +1,6 @@
 import telebot
 import datetime
-import schedule
+import threading
 
 bot = telebot.TeleBot("8287514660:AAGmIWrcoydKFDWl65tb_zRrkpsFKiMEFjw")
 
@@ -10,10 +10,12 @@ def reply(message):
   date_time = now.strftime("%Y-%m-%d %H:%M:%S")
   bot.reply_to(message, "Привет! Я доступен. Сейчас "+date_time)
 
-def job():
-  now = datetime.datetime.now()
-  date_time = now.strftime("%Y-%m-%d %H:%M:%S")
+def delayed():
+    th_name = threading.current_thread().name
+    print(f'Th:{th_name} Worker запущен')
 
-schedule.every(10).seconds.do(job)
+# Создание и запуск потоков таймеров
+t1 = threading.Timer(0.3, delayed)
+t1.start()
 
 bot.polling(none_stop=True)
