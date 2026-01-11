@@ -8,15 +8,15 @@ bot = telebot.TeleBot("8287514660:AAGmIWrcoydKFDWl65tb_zRrkpsFKiMEFjw")
 def reply(message):
   now = datetime.datetime.now()
   date_time = now.strftime("%Y-%m-%d %H:%M:%S")
-  bot.reply_to(message, "Привет! Я доступен. Сейчас "+date_time)
+  bot.reply_to(message, "Привет! Я доступен. Сейчас "+date_time+" myID: "+message)
 
 def delayed():
   th_name = threading.current_thread().name
   print(f'Th:{th_name} Worker запущен')
-  bot.reply_to(message, "Привет! Я доступен by timer. ")
+  bot.send_message(1949621819, "Привет! Я доступен по таймеру.")
 
 # Создание и запуск потоков таймеров
-t1 = threading.Timer(1, delayed)
+t1 = threading.Timer(10, delayed)
 t1.start()
 # t1.cancel()
 
