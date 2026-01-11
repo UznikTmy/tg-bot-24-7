@@ -13,7 +13,7 @@ def reply(message):
 def delayed():
   th_name = threading.current_thread().name
   print(f'Th:{th_name} Worker запущен')
-  bot.send_message(-1003613605265, "*Привет!* Я доступен по таймеру.") # 1949621819
+  bot.send_message(-1003613605265, "*Привет!* Я доступен по таймеру.", parse_mode=MarkdownV2) # 1949621819
 
 # Создание и запуск потоков таймеров
 t1 = threading.Timer(10, delayed)
